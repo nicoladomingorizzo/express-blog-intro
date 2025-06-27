@@ -23,5 +23,41 @@ app.listen(port, () => {
 
 //app.get per home
 app.get('/', (req, res) => {
+    res.send('<h1>Welcome to the Bakery</h1>');
+});
 
+//app.get per products
+app.get('/api/Products', (req, res) => {
+    const postsProducts = [
+        {
+            title: 'Ciambellone ',
+            content: 'Content of Post 1',
+            image: '/images/ciambellone.jpeg',
+            tags: ['dolce', 'dessert', 'zucchero a velo']
+        },
+        {
+            title: 'Cracker di barbabietola',
+            content: 'Content of Post 2',
+            image: '/images/cracker_barbabietola.jpeg',
+            tags: ['dolce', 'semi', 'barbabietola']
+        },
+        {
+            title: 'Pane fritto dolce',
+            content: 'Content of Post 3',
+            image: '/images/pane_fritto_dolce.jpeg',
+            tags: ['fritto', 'pane', 'zucchero']
+        },
+        {
+            title: 'Pasta alla barbabietola',
+            content: 'Content of Post 4',
+            image: '/images/pasta_barbabietola.jpeg',
+            tags: ['pasta', 'pistacchio', 'barbabietola']
+        },
+        {
+            title: 'Torta paesana',
+            content: 'Content of Post 5',
+            image: '/images/torta_paesana.jpeg',
+            tags: ['torta', 'limone', 'noci']
+        }];
+    res.json(postsProducts);
 });
